@@ -1,14 +1,39 @@
 <!-- Instalar inertia en laravel
-composer require inertiajs/inertia-laravel
+-composer require inertiajs/inertia-laravel
+-Instalar react en laravel tmb con la version 18 creo que acepta inertia, no las ultimas.
+-Cambiar varios archivos que ire detallando
 
-instalar intertia en front react, solo acepta version 18
-npm install @inertiajs/inertia @inertiajs/inertia-react
+**Video con el que me guie https://www.youtube.com/watch?v=Wnfu0p-G9FM&t=2091s
+mas la pagina de inertia, mas chatgpt.
 
-archivo routes: modificarlo para llamar al componente de react
 
-archivo app.jsx s ele importan: import { InertiaApp } from '@inertiajs/inertia-react';
 
-en resourses/viws/welcome.bade.php tmb agregar  @vite('resources/js/app.js') y agregarle el   <div id="app"></div> //el contenedor donde react sera montado
+----coneccion a  una nueva base de datos, dveaber---
+-coneccion a mysql via dveaver (por xampp activo)
+-Creaciond de la base de datos
+-configuracion de archivo .env a la nueva base de datos (estudios_compartidos)
+- creamos una tabla  php artisan make:migration create_usuarios_table --create=usuarios
+-Esto generará un archivo en database/migrations y ahi editamos/generamos la tabla que queremos.
+-ejecutar las mi graciones con: php artisan migrate
+----------modelo-----------
+-creamos modelo usuario: php artisan make:model Usuarios
+-configuramos el modelo, con la coneccion a la base de datos y los campos 'protected filles'
+-si no le indicamos la base de datos es porque lo hace por defaul a la que tiene en el .env aun...o se la indicamos de haber varias. (protected $connection = 'mysql'; )
+
+---------conrolador---------
+-creamos contro: php artisan make:controller estudios_compartidosController
+-creamos metodos dentro ,con inertia
+
+---------ruta------
+-creamos la ruta con inertia (para hacer una vista de info rapida, es decir, pasarle al componente react)
+-o creamos rutas tradicionales tmb para apis
+
+-----configuramos el componente react (resourses/js/Pages/xxxx componentes)----
+-recibira como prop lo que inertia le pase.
+
+----npm run dev y php artisan serve para que todo funcione-----
+---Para refrescar la smigraciones: php artisan migrate:fresh----
+
 
  -->
 
