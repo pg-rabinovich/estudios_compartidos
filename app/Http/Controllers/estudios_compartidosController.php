@@ -19,5 +19,5 @@ class estudios_compartidosController extends Controller
     }
 
     //Aquí, Inertia::render('Home', ['usuarios' => $usuarios]) le dice a Laravel:
-    //👉 "Cargar el componente Home y pasarle usuarios como prop".
+    // "Cargar el componente Home y pasarle usuarios como prop".
 }

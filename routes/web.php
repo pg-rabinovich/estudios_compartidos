@@ -7,7 +7,7 @@ use App\Http\Controllers\estudios_compartidosController;
 
 /* 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    return Inertia::render('Base');
 }); */
 
 ///podemos llamarlo de ambas formas...
