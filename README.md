@@ -35,6 +35,11 @@ mas la pagina de inertia, mas chatgpt.
 ---Para refrescar la smigraciones: php artisan migrate:fresh----
 
 
+--LAYOUT
+/* Base.layout = (page) => <Layout children={page} />; */
+//asi llamamos al layout en un componente, pero lo haremos por default
+//en el archivo app.jsx
+
  -->
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>

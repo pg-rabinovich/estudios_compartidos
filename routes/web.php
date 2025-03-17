@@ -18,3 +18,9 @@ Route::inertia('/', 'Base');
 
 /* Route::get('/', [estudios_compartidosController::class, 'listarUsuarios']); */
 Route::get('/listarUsuarios', [estudios_compartidosController::class, 'listarUsuarios']);
+
+
+
+Route::get('/paroles', function () {
+    return inertia('Estudio/Paroles'); //el nombre de la carpeta/el nombre del comp.
+});

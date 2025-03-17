@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+@source "../views";
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source "../**/*.blade.php";
@@ -10,4 +11,19 @@
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
+}
+
+/* @layer para personalizar el navegador */
+@layer navegador {
+    nav {
+        @apply bg-sky-400 p-4 shadow-md;
+    }
+
+    .nav-links {
+        @apply container mx-auto flex justify-center space-x-6;
+    }
+
+    .nav-link {
+        @apply text-red-300 font-semibold px-4 py-2 rounded-md transition duration-300 hover:bg-sky-700 hover:text-white;
+    }
 }
