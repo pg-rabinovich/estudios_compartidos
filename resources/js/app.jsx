@@ -16,6 +16,10 @@ createInertiaApp({
     setup({ el, App, props }) {
         createRoot(el).render(<App {...props} />);
     },
+    progress: {
+        color: "red",
+        showSpinner: true,
+    },
 });
 
 //Layout: le decimos 'si mi componente tiene una layout usa esa sino usa el layout por default.
