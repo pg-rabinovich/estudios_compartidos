@@ -13,11 +13,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        sleep(2);
-        /*  $posts = Post::all(); */ //creamos una $posts conectada con el modelo post , qu etraera toda la data.
-        $posts = Post::latest()->get(); //antes traiamos todos pero con este metodo llamamos primero a los ultimos post hechos
+        /* sleep(2); */
+        /*  $posts = Post::all(); */ //creamos una $posts conectada con el modelo post , que traera toda la data.
+        $posts = Post::latest()->paginate(5);/* get(); get los trae todos*/ //antes traiamos todos pero con el metodo latests llamamos primero a los ultimos post hechos y con paginate traemos 5
         return inertia('Base', ['posts' => $posts]); //en el metodo de inertia, en el segudno argumento le enviamos el 'posts' como prop a nuestro componente,
     }
+
+    //metodo 'paginate' si lo insspeccionamos vemos: 'data' 'link' (por eso luego en 'base' lo llamamos asi al traerlo)
 
     /**
      * Show the form for creating a new resource.

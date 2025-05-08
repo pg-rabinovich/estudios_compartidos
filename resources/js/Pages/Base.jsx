@@ -3,6 +3,7 @@ import Layout from "../Layouts/Layout";
 import { Link } from "@inertiajs/react";
 
 function Base({ posts }) {
+    console.log(posts);
     return (
         <>
             <h1 class="p-8">Estudios_compartidos </h1>
@@ -10,10 +11,10 @@ function Base({ posts }) {
             <br />
 
             <div>
-                {posts.map((post) => (
+                {posts.data.map((post) => (
                     <div key={post.id} className="p-4 border-b">
                         <div className="text-sm text-slate-600">
-                            <span> Posted on: </span>
+                            <span> Publicado el: </span>
                             <span>
                                 {new Date(post.created_at).toLocaleTimeString()}
                             </span>
@@ -21,6 +22,27 @@ function Base({ posts }) {
                         <p className="font-medium">{post.body}</p>
                     </div>
                 ))}
+            </div>
+
+            <div className="py-12 px-4">
+                {posts.links.map((link) =>
+                    link.url ? (
+                        <Link
+                            key={link.label}
+                            href={link.url}
+                            dangerouslySetInnerHTML={{ __html: link.label }}
+                            className={`p-1 mx-1 ${
+                                link.active ? "text-blue-500 font-bold" : ""
+                            }`}
+                        />
+                    ) : (
+                        <span
+                            key={link.label}
+                            dangerouslySetInnerHTML={{ __html: link.label }}
+                            className="p-1 mx-1 text-slate-300"
+                        ></span>
+                    )
+                )}
             </div>
 
             {/* 
@@ -40,7 +62,7 @@ function Base({ posts }) {
 /* Base.layout = (page) => <Layout children={page} />; */
 
 //asi, aqui antes del export llamamos al layout en un componente, pero lo haremos por default
-//en el archivo app.jsx. Ahi el diremos, usa el layout por default pero si coloco otro layout
+//en el archivo app.jsx. Ahi le diremos, usa el layout por default pero si coloco otro layout
 //en mi componente , usa ese.
 
 //preserveScroll--> funcion de inertia para que al cliquear sobre algo (en este caso la hora)

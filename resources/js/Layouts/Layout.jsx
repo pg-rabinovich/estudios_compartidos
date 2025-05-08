@@ -9,8 +9,8 @@ function Layout({ children }) {
                         <Link className="nav-link" href="/">
                             Base
                         </Link>
-                        <Link className="nav-link" href="/crear">
-                            Crear
+                        <Link className="nav-link" href="/listarUsuarios">
+                            Listar
                         </Link>
                     </div>
                 </nav>
